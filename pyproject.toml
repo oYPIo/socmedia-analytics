@@ -1,0 +1,15 @@
+[project]
+name = "socmedia-analytics"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.12"
+dependencies = [
+    "feedparser (>=6.0.11,<7.0.0)",
+    "schedule (>=1.2.2,<2.0.0)",
+    "elasticsearch (==8.12.1)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

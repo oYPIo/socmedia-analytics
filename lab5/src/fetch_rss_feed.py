@@ -6,7 +6,7 @@ from dateutil import parser
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 
-from definitions import (
+from lab5.src.variables import (
     ES_HOST,
     ES_PASSWORD,
     ES_USERNAME,

@@ -3,7 +3,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import HTMLResponse
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
-from definitions import (
+from lab4.src.variables import (
     ES_HOST,
     ES_USERNAME,
     ES_PASSWORD,

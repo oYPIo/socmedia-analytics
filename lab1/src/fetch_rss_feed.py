@@ -4,10 +4,10 @@ import csv
 import schedule
 import time
 
-from definitions import EXTERNAL_DATA_FOLDER, FETCH_PERIOD_HOURS, RSS_FEEDS
+from lab1.src.variables import EXTERNAL_DATA_FOLDER, FETCH_PERIOD_HOURS, RSS_FEEDS
 
 
-def fetch_rss_feeds(feeds: list[str], path: Path):
+def fetch_rss_feeds(feeds = RSS_FEEDS, path = EXTERNAL_DATA_FOLDER / "rss_feed.csv"):
     all_entries = []
     for url in feeds:
         feed = feedparser.parse(url)
@@ -29,13 +29,9 @@ def fetch_rss_feeds(feeds: list[str], path: Path):
         writer.writerows(all_entries)
 
 
-def fetch_rss_feeds_default():
-    fetch_rss_feeds(RSS_FEEDS, EXTERNAL_DATA_FOLDER / "rss_feed.csv")
-
-
 if __name__ == "__main__":
-    fetch_rss_feeds_default()
-    schedule.every(FETCH_PERIOD_HOURS).hours.do(fetch_rss_feeds_default)
+    fetch_rss_feeds()
+    schedule.every(FETCH_PERIOD_HOURS).hours.do(fetch_rss_feeds())
     while True:
         schedule.run_pending()
         time.sleep(60)

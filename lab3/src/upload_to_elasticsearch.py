@@ -1,6 +1,6 @@
 import json
 from elasticsearch import Elasticsearch
-from definitions import (
+from lab3.src.variables import (
     ES_PASSWORD,
     ES_USERNAME,
     ES_HOST,

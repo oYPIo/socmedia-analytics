@@ -1,9 +1,9 @@
 import json
 from pathlib import Path
-from definitions import EXTERNAL_DATA_FOLDER
+from lab2.src.variables import EXTERNAL_DATA_FOLDER
 
 
-def generate_batch_json(data, output_file: Path):
+def generate_json(data, output_file: Path):
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     with open(output_file, "w", encoding="utf-8") as file:
@@ -16,4 +16,4 @@ if __name__ == "__main__":
         {"id": 2, "name": "Item 2", "value": 200},
         {"id": 3, "name": "Item 3", "value": 300},
     ]
-    generate_batch_json(data, EXTERNAL_DATA_FOLDER / "example.json")
+    generate_json(data, EXTERNAL_DATA_FOLDER / "example.json")
